@@ -1,0 +1,125 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 2 /Kids [ 5 0 R 6 0 R ] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+7 0 obj
+<< /Length 4419 >>
+stream
+BT /F2 12 Tf 218.28 720.00 Td (Computer Science Department) Tj ET
+BT /F2 12 Tf 211.14 705.00 Td (San Francisco State University) Tj ET
+BT /F2 12 Tf 199.32 690.00 Td (CSC 413 - Documentation Guidelines) Tj ET
+BT /F1 11 Tf 72.00 667.00 Td (You are required to write project documentation, export it as a PDF, and store) Tj ET
+BT /F1 11 Tf 72.00 653.00 Td (the PDF in the documentation folder of your GitHub repository.) Tj ET
+BT /F2 11 Tf 72.00 631.00 Td (PDFs only. Do not submit Word documents for the final documentation.) Tj ET
+BT /F2 11 Tf 72.00 609.00 Td (Required Sections) Tj ET
+BT /F1 11 Tf 72.00 595.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 595.00 Td (Title Page) Tj ET
+BT /F1 11 Tf 90.00 581.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 581.00 Td (Name) Tj ET
+BT /F1 11 Tf 90.00 567.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 567.00 Td (Student ID) Tj ET
+BT /F1 11 Tf 90.00 553.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 553.00 Td (Class and semester) Tj ET
+BT /F1 11 Tf 90.00 539.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 539.00 Td (GitHub repository link) Tj ET
+BT /F1 11 Tf 72.00 525.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 525.00 Td (Introduction) Tj ET
+BT /F1 11 Tf 72.00 511.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 511.00 Td (Project Overview) Tj ET
+BT /F1 11 Tf 90.00 497.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 497.00 Td (Explain the project at a high level. Assume the audience is not familiar) Tj ET
+BT /F1 11 Tf 104.00 483.00 Td (with the code.) Tj ET
+BT /F1 11 Tf 72.00 469.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 469.00 Td (Technical Overview) Tj ET
+BT /F1 11 Tf 90.00 455.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 455.00 Td (Explain the project for an experienced programmer.) Tj ET
+BT /F1 11 Tf 72.00 441.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 441.00 Td (Summary of Work Completed) Tj ET
+BT /F1 11 Tf 90.00 427.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 427.00 Td (Discuss what you contributed to the assignment and what works correctly.) Tj ET
+BT /F1 11 Tf 104.00 413.00 Td (If anything is incomplete, list what remains unfinished.) Tj ET
+BT /F1 11 Tf 72.00 399.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 399.00 Td (Development Environment) Tj ET
+BT /F1 11 Tf 90.00 385.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 385.00 Td (Java version used) Tj ET
+BT /F1 11 Tf 90.00 371.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 371.00 Td (IDE used) Tj ET
+BT /F1 11 Tf 72.00 357.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 357.00 Td (Build or Import Instructions) Tj ET
+BT /F1 11 Tf 90.00 343.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 343.00 Td (Explain how to build or import the project in the IDE you used.) Tj ET
+BT /F1 11 Tf 90.00 329.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 329.00 Td (Instructions such as click the play button or import the project are not) Tj ET
+BT /F1 11 Tf 104.00 315.00 Td (enough. Include specific steps and/or commands.) Tj ET
+BT /F1 11 Tf 72.00 301.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 301.00 Td (Run Instructions) Tj ET
+BT /F1 11 Tf 90.00 287.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 287.00 Td (Explain how to run the project after it has been built or imported.) Tj ET
+BT /F1 11 Tf 72.00 273.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 273.00 Td (Assumptions) Tj ET
+BT /F1 11 Tf 90.00 259.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 259.00 Td (List the assumptions made while designing and implementing the project.) Tj ET
+BT /F1 11 Tf 72.00 245.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 245.00 Td (Implementation Discussion) Tj ET
+BT /F1 11 Tf 90.00 231.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 231.00 Td (Discuss the design choices made while implementing the assignment.) Tj ET
+BT /F1 11 Tf 90.00 217.00 Td (-) Tj ET
+BT /F1 11 Tf 104.00 217.00 Td (Include a UML class diagram of your assignment. Files related to testing do) Tj ET
+BT /F1 11 Tf 104.00 203.00 Td (not need to be included.) Tj ET
+BT /F1 11 Tf 72.00 189.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 189.00 Td (Project Reflection) Tj ET
+BT /F1 11 Tf 72.00 175.00 Td (-) Tj ET
+BT /F2 11 Tf 86.00 175.00 Td (Project Conclusion and Results) Tj ET
+BT /F2 11 Tf 72.00 153.00 Td (Submission Checklist) Tj ET
+BT /F1 11 Tf 72.00 139.00 Td (-) Tj ET
+BT /F1 11 Tf 86.00 139.00 Td (PDF is stored in the documentation folder.) Tj ET
+BT /F1 11 Tf 72.00 125.00 Td (-) Tj ET
+BT /F1 11 Tf 86.00 125.00 Td (Repository link is included and works.) Tj ET
+BT /F1 11 Tf 72.00 111.00 Td (-) Tj ET
+BT /F1 11 Tf 86.00 111.00 Td (Build/import and run instructions have been tested.) Tj ET
+BT /F1 11 Tf 72.00 97.00 Td (-) Tj ET
+BT /F1 11 Tf 86.00 97.00 Td (UML class diagram is included.) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Length 434 >>
+stream
+BT /F1 11 Tf 72.00 720.00 Td (-) Tj ET
+BT /F1 11 Tf 86.00 720.00 Td (Spelling, grammar, and formatting have been reviewed.) Tj ET
+BT /F1 11 Tf 72.00 698.00 Td (Organization and appearance are important. Use spelling and grammar checkers;) Tj ET
+BT /F1 11 Tf 72.00 684.00 Td (your ability to communicate about software and technology is almost as important) Tj ET
+BT /F1 11 Tf 72.00 670.00 Td (as your ability to write software.) Tj ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000129 00000 n 
+0000000199 00000 n 
+0000000274 00000 n 
+0000000410 00000 n 
+0000000546 00000 n 
+0000005017 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+5502
+%%EOF
