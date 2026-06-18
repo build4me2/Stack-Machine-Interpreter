@@ -37,7 +37,18 @@ class Heap {
      * @throws HeapOutOfMemoryException if the allocation would exceed the maximum heap size
      */
     int allocate(int size) throws HeapOutOfMemoryException {
-        return -1;
+        if (size <= 0) {
+            throw new IllegalArgumentException("Heap allocation size must be positive.");
+        }
+
+        if (size > MAX_HEAP_SLOTS - usedSlots) {
+            throw new HeapOutOfMemoryException("Heap allocation would exceed the maximum heap size.");
+        }
+
+        int address = nextAddress++;
+        allocations.put(address, new int[size]);
+        usedSlots += size;
+        return address;
     }
 
     /**
@@ -52,7 +63,8 @@ class Heap {
      */
     int load(int address, int offset)
             throws InvalidHeapAddressException, HeapUseAfterFreeException, HeapBoundsException {
-        return -1;
+        checkAccess(address, offset);
+        return allocations.get(address)[offset];
     }
 
     /**
@@ -67,7 +79,8 @@ class Heap {
      */
     void store(int address, int offset, int value)
             throws InvalidHeapAddressException, HeapUseAfterFreeException, HeapBoundsException {
-
+        checkAccess(address, offset);
+        allocations.get(address)[offset] = value;
     }
 
     /**
@@ -78,7 +91,18 @@ class Heap {
      * @throws HeapUseAfterFreeException   if the block at  address has already been freed
      */
     void free(int address) throws InvalidHeapAddressException, HeapUseAfterFreeException {
-       
+        if (freed.contains(address)) {
+            throw new HeapUseAfterFreeException("Heap block has already been freed: " + address);
+        }
+
+        int[] block = allocations.remove(address);
+        if (block == null) {
+            throw new InvalidHeapAddressException("Heap address was never allocated: " + address);
+        }
+
+        // Freed addresses remain recorded so later accesses can be distinguished from never-allocated addresses.
+        freed.add(address);
+        usedSlots -= block.length;
     }
 
     /**
@@ -92,6 +116,18 @@ class Heap {
      * @throws HeapBoundsException         if  offset is out of range for the block
      */
     private void checkAccess(int address, int offset) throws InvalidHeapAddressException, HeapUseAfterFreeException, HeapBoundsException {
-       
+        if (freed.contains(address)) {
+            throw new HeapUseAfterFreeException("Heap block has already been freed: " + address);
+        }
+
+        int[] block = allocations.get(address);
+        if (block == null) {
+            throw new InvalidHeapAddressException("Heap address was never allocated: " + address);
+        }
+
+        int blockSize = block.length;
+        if (offset < 0 || offset >= blockSize) {
+            throw new HeapBoundsException("Heap offset is outside the allocated block: " + offset);
+        }
     }
 }
