@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Program {
 
-    private List<ByteCode> program;
+    private final List<ByteCode> program;
 
     /**
      * Instantiates a program object using an

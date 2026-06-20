@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for allocating heap blocks.
+ * Bytecode for allocating heap blocks.
  */
 public class NewCode implements ByteCode {
 

@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for binary operations.
+ * Bytecode for binary operations.
  */
 public class BopCode implements ByteCode {
 

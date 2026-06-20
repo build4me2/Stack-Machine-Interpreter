@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for copying a current-frame value to the stack top.
+ * Bytecode for copying a current-frame value to the stack top.
  */
 public class LoadCode implements ByteCode {
 

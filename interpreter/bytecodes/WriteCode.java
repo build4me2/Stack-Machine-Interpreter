@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for writing the top runtime value.
+ * Bytecode for writing the top runtime value.
  */
 public class WriteCode implements ByteCode {
 

@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for stopping program execution.
+ * Bytecode for stopping program execution.
  */
 public class HaltCode implements ByteCode {
 

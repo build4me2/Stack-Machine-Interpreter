@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Bytecode stub for reading integer input.
+ * Bytecode for reading integer input.
  */
 public class ReadCode implements ByteCode {
 
