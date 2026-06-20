@@ -11,6 +11,7 @@ public class StoreCode implements ByteCode {
 
     private int offset;
     private String id;
+    private int storedValue;
 
     @Override
     public void init(List<String> args) {
@@ -22,7 +23,7 @@ public class StoreCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
-        virtualMachine.storeRunStack(offset);
+        storedValue = virtualMachine.storeRunStack(offset);
     }
 
     @Override
@@ -30,6 +31,6 @@ public class StoreCode implements ByteCode {
         if (id == null) {
             return "STORE " + offset;
         }
-        return "STORE " + offset + " " + id;
+        return "STORE " + offset + " " + id + "\n" + id + "=" + storedValue;
     }
 }

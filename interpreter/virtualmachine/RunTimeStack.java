@@ -44,6 +44,20 @@ class RunTimeStack {
         return display.toString();
     }
 
+    String currentFrameValuesDisplay() {
+        int frameStart = framePointer.peek();
+        StringBuilder display = new StringBuilder();
+
+        for (int index = frameStart; index < runTimeStack.size(); index++) {
+            if (index > frameStart) {
+                display.append(",");
+            }
+            display.append(runTimeStack.get(index));
+        }
+
+        return display.toString();
+    }
+
     /**
      * Returns the top of the runtime stack, but does not remove it.
      *
