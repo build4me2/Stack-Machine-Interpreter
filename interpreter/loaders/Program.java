@@ -1,9 +1,13 @@
 package interpreter.loaders;
 
+import interpreter.bytecodes.AddressResolvable;
 import interpreter.bytecodes.ByteCode;
+import interpreter.bytecodes.LabelCode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Program {
 
@@ -14,7 +18,7 @@ public class Program {
      * ArrayList
      */
     public Program() {
-
+        program = new ArrayList<>();
     }
 
     /**
@@ -23,7 +27,7 @@ public class Program {
      * @return size of program
      */
     public int getSize() {
-        return 0;
+        return program.size();
     }
 
     /**
@@ -33,7 +37,7 @@ public class Program {
      * @return a bytecode.
      */
     public ByteCode getCode(int programCounter) {
-        return null;
+        return program.get(programCounter);
     }
 
     /**
@@ -42,7 +46,7 @@ public class Program {
      * @param c bytecode to be added
      */
     public void addCode(ByteCode c) {
-
+        program.add(c);
     }
 
     /**
@@ -55,6 +59,25 @@ public class Program {
      * **** METHOD SIGNATURE CANNOT BE CHANGED *****
      */
     public void resolveAddress() {
+        Map<String, Integer> labelAddresses = new HashMap<>();
 
+        for (int address = 0; address < program.size(); address++) {
+            ByteCode code = program.get(address);
+            if (code instanceof LabelCode labelCode) {
+                labelAddresses.put(labelCode.getLabel(), address);
+            }
+        }
+
+        for (ByteCode code : program) {
+            if (code instanceof AddressResolvable addressResolvable) {
+                Integer resolvedAddress = labelAddresses.get(addressResolvable.getLabel());
+                if (resolvedAddress == null) {
+                    throw new IllegalStateException("No matching label for: " + addressResolvable.getLabel());
+                }
+
+                // Resolution is kept in the loaded program so source bytecode files remain unchanged.
+                addressResolvable.setResolvedAddress(resolvedAddress);
+            }
+        }
     }
 }
