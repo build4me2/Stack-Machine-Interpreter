@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for pushing literal values.
+ * Bytecode for pushing literal values.
  */
 public class LitCode implements ByteCode {
 

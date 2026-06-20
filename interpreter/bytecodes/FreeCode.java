@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for releasing heap blocks.
+ * Bytecode for releasing heap blocks.
  */
 public class FreeCode implements ByteCode {
 

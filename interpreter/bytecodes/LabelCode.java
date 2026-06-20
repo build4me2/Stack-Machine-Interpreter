@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for marking symbolic program locations.
+ * Bytecode for marking symbolic program locations.
  */
 public class LabelCode implements ByteCode {
 

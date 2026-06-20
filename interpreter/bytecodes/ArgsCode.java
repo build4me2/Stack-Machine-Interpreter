@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for preparing a function activation frame.
+ * Bytecode for preparing a function activation frame.
  */
 public class ArgsCode implements ByteCode {
 

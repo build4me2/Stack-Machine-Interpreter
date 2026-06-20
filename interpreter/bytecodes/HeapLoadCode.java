@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for loading values from heap storage.
+ * Bytecode for loading values from heap storage.
  */
 public class HeapLoadCode implements ByteCode {
 

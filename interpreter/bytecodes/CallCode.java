@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for entering a function body.
+ * Bytecode for entering a function body.
  */
 public class CallCode implements ByteCode, AddressResolvable {
 

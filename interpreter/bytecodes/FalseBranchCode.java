@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for conditional control-flow jumps.
+ * Bytecode for conditional control-flow jumps.
  */
 public class FalseBranchCode implements ByteCode, AddressResolvable {
 

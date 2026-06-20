@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for storing the top runtime value in the current frame.
+ * Bytecode for storing the top runtime value in the current frame.
  */
 public class StoreCode implements ByteCode {
 

@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for changing verbose execution state.
+ * Bytecode for changing verbose execution state.
  */
 public class VerboseCode implements ByteCode {
 

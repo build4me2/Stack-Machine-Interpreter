@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for removing values from the current runtime frame.
+ * Bytecode for removing values from the current runtime frame.
  */
 public class PopCode implements ByteCode {
 

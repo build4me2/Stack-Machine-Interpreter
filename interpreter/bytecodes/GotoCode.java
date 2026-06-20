@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for unconditional control-flow jumps.
+ * Bytecode for unconditional control-flow jumps.
  */
 public class GotoCode implements ByteCode, AddressResolvable {
 

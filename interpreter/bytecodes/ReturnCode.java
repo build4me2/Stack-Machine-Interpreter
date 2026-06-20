@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode stub for leaving a function body.
+ * Bytecode for leaving a function body.
  */
 public class ReturnCode implements ByteCode {
 
