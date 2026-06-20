@@ -19,6 +19,8 @@ public class CallCode implements ByteCode, AddressResolvable {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        virtualMachine.pushReturnAddress(virtualMachine.getProgramCounter());
+        virtualMachine.setProgramCounter(resolvedAddress);
     }
 
     @Override

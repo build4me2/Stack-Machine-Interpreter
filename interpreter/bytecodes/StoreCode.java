@@ -22,6 +22,7 @@ public class StoreCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        virtualMachine.storeRunStack(offset);
     }
 
     @Override

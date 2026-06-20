@@ -18,6 +18,27 @@ public class BopCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        int rightOperand = virtualMachine.popRunStack();
+        int leftOperand = virtualMachine.popRunStack();
+        int result;
+
+        switch (operator) {
+            case "+" -> result = leftOperand + rightOperand;
+            case "-" -> result = leftOperand - rightOperand;
+            case "*" -> result = leftOperand * rightOperand;
+            case "/" -> result = leftOperand / rightOperand;
+            case "==" -> result = leftOperand == rightOperand ? 1 : 0;
+            case "!=" -> result = leftOperand != rightOperand ? 1 : 0;
+            case "<=" -> result = leftOperand <= rightOperand ? 1 : 0;
+            case "<" -> result = leftOperand < rightOperand ? 1 : 0;
+            case ">=" -> result = leftOperand >= rightOperand ? 1 : 0;
+            case ">" -> result = leftOperand > rightOperand ? 1 : 0;
+            case "&" -> result = leftOperand != 0 && rightOperand != 0 ? 1 : 0;
+            case "|" -> result = leftOperand != 0 || rightOperand != 0 ? 1 : 0;
+            default -> throw new IllegalArgumentException("Unsupported binary operator: " + operator);
+        }
+
+        virtualMachine.pushRunStack(result);
     }
 
     @Override

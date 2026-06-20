@@ -19,6 +19,7 @@ public class GotoCode implements ByteCode, AddressResolvable {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        virtualMachine.setProgramCounter(resolvedAddress);
     }
 
     @Override

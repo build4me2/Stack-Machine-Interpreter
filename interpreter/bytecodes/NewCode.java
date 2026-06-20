@@ -18,6 +18,8 @@ public class NewCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        int address = virtualMachine.allocateHeap(size);
+        virtualMachine.pushRunStack(address);
     }
 
     @Override

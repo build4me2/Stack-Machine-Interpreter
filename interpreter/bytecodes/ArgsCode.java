@@ -18,6 +18,7 @@ public class ArgsCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        virtualMachine.newFrameAt(argCount);
     }
 
     @Override

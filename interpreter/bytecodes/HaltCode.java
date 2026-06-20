@@ -15,6 +15,7 @@ public class HaltCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        virtualMachine.halt();
     }
 
     @Override
