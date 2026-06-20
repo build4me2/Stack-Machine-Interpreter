@@ -18,6 +18,13 @@ public class PopCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        for (int i = 0; i < count; i++) {
+            try {
+                virtualMachine.popRunStack();
+            } catch (IllegalStateException ex) {
+                break;
+            }
+        }
     }
 
     @Override

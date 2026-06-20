@@ -19,6 +19,10 @@ public class FalseBranchCode implements ByteCode, AddressResolvable {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        int condition = virtualMachine.popRunStack();
+        if (condition == 0) {
+            virtualMachine.setProgramCounter(resolvedAddress);
+        }
     }
 
     @Override

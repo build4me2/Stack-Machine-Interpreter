@@ -15,6 +15,8 @@ public class FreeCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        int address = virtualMachine.popRunStack();
+        virtualMachine.freeHeap(address);
     }
 
     @Override

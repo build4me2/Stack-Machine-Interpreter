@@ -22,6 +22,7 @@ public class LoadCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        virtualMachine.loadRunStack(offset);
     }
 
     @Override

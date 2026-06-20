@@ -15,6 +15,10 @@ public class HeapLoadCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        int offset = virtualMachine.popRunStack();
+        int address = virtualMachine.popRunStack();
+        int value = virtualMachine.loadHeap(address, offset);
+        virtualMachine.pushRunStack(value);
     }
 
     @Override

@@ -20,6 +20,8 @@ public class ReturnCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        virtualMachine.popFrame();
+        virtualMachine.setProgramCounter(virtualMachine.popReturnAddress());
     }
 
     @Override

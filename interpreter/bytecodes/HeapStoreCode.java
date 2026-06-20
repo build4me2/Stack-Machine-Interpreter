@@ -15,6 +15,10 @@ public class HeapStoreCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        int value = virtualMachine.popRunStack();
+        int offset = virtualMachine.popRunStack();
+        int address = virtualMachine.popRunStack();
+        virtualMachine.storeHeap(address, offset, value);
     }
 
     @Override

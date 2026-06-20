@@ -15,6 +15,7 @@ public class WriteCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        System.out.println(virtualMachine.peekRunStack());
     }
 
     @Override

@@ -18,6 +18,7 @@ public class VerboseCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        virtualMachine.setVerbose("ON".equals(state));
     }
 
     @Override
