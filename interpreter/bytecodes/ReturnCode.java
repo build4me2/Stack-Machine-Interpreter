@@ -10,6 +10,7 @@ import java.util.List;
 public class ReturnCode implements ByteCode {
 
     private String label;
+    private int returnValue;
 
     @Override
     public void init(List<String> args) {
@@ -20,6 +21,7 @@ public class ReturnCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        returnValue = virtualMachine.peekRunStack();
         virtualMachine.popFrame();
         virtualMachine.setProgramCounter(virtualMachine.popReturnAddress());
     }
@@ -29,6 +31,14 @@ public class ReturnCode implements ByteCode {
         if (label == null) {
             return "RETURN";
         }
-        return "RETURN " + label;
+        return "RETURN " + label + "\nEXIT " + baseLabel() + ":" + returnValue;
+    }
+
+    private String baseLabel() {
+        int generatedSuffix = label.indexOf("<<");
+        if (generatedSuffix < 0) {
+            return label;
+        }
+        return label.substring(0, generatedSuffix);
     }
 }

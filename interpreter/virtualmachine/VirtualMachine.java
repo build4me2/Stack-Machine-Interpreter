@@ -98,6 +98,10 @@ public class VirtualMachine {
         isVerbose = verbose;
     }
 
+    public String currentFrameValuesDisplay() {
+        return runTimeStack.currentFrameValuesDisplay();
+    }
+
     public int allocateHeap(int size) throws HeapOutOfMemoryException {
         return heap.allocate(size);
     }

@@ -11,6 +11,7 @@ public class CallCode implements ByteCode, AddressResolvable {
 
     private String label;
     private int resolvedAddress;
+    private String arguments;
 
     @Override
     public void init(List<String> args) {
@@ -19,6 +20,7 @@ public class CallCode implements ByteCode, AddressResolvable {
 
     @Override
     public void execute(VirtualMachine virtualMachine) {
+        arguments = virtualMachine.currentFrameValuesDisplay();
         virtualMachine.pushReturnAddress(virtualMachine.getProgramCounter());
         virtualMachine.setProgramCounter(resolvedAddress);
     }
@@ -35,6 +37,14 @@ public class CallCode implements ByteCode, AddressResolvable {
 
     @Override
     public String toString() {
-        return "CALL " + label;
+        return "CALL " + label + " " + baseLabel() + "(" + arguments + ")";
+    }
+
+    private String baseLabel() {
+        int generatedSuffix = label.indexOf("<<");
+        if (generatedSuffix < 0) {
+            return label;
+        }
+        return label.substring(0, generatedSuffix);
     }
 }

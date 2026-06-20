@@ -30,6 +30,6 @@ public class LitCode implements ByteCode {
         if (id == null) {
             return "LIT " + value;
         }
-        return "LIT " + value + " " + id;
+        return "LIT " + value + " " + id + "\nint " + id;
     }
 }
