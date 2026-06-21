@@ -1,7 +1,8 @@
 package interpreter.virtualmachine.exceptions;
 
 /**
- * Exception for when a heap access is outside the bounds of an allocated block.
+ * Separates out-of-range heap indexes from invalid addresses so heap errors
+ * identify which memory-safety rule was violated.
  */
 public class HeapBoundsException extends RuntimeException {
     public HeapBoundsException(Throwable ex) {

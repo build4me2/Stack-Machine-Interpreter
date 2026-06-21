@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for changing verbose execution state.
+ * Changes tracing through the VM so ByteCodes do not own or query global execution state.
  */
 public class VerboseCode implements ByteCode {
 

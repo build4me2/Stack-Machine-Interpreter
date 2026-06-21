@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for conditional control-flow jumps.
+ * Stores a resolved branch target so conditional jumps are constant-time during execution.
  */
 public class FalseBranchCode implements ByteCode, AddressResolvable {
 

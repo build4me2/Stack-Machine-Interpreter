@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for storing the top runtime value in the current frame.
+ * Delegates assignment to the VM so current-frame boundaries stay protected.
  */
 public class StoreCode implements ByteCode {
 

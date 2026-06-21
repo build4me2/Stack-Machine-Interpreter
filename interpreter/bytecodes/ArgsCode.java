@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for preparing a function activation frame.
+ * Defines the next call frame before control transfers, keeping call setup separate from function entry.
  */
 public class ArgsCode implements ByteCode {
 

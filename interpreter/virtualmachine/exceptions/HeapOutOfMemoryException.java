@@ -1,7 +1,8 @@
 package interpreter.virtualmachine.exceptions;
 
 /**
- * Exception for when heap allocation fails because the heap is full.
+ * Keeps heap-capacity failures distinct from access failures so allocation code
+ * can report that no valid address was produced.
  */
 public class HeapOutOfMemoryException extends RuntimeException {
     public HeapOutOfMemoryException(Throwable ex) {

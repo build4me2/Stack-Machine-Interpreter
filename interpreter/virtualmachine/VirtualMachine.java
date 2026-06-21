@@ -9,6 +9,10 @@ import interpreter.virtualmachine.exceptions.InvalidHeapAddressException;
 
 import java.util.Stack;
 
+/**
+ * Owns execution state so ByteCodes can request operations without reaching into
+ * runtime structures directly.
+ */
 public class VirtualMachine {
 
     private final RunTimeStack runTimeStack;
@@ -125,7 +129,7 @@ public class VirtualMachine {
             return false;
         }
 
-        // Verbose-off instructions still need to report the instruction that disabled tracing.
+        // The disabling instruction is still part of the trace that was active when it began.
         return isVerbose || verboseBeforeExecution;
     }
 }

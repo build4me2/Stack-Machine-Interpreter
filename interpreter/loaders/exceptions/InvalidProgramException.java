@@ -1,9 +1,8 @@
 package interpreter.loaders.exceptions;
 
 /**
- * Exception for when loadCode fails.
- * This exception is used to bubble up all
- * exceptions that can be thrown by loadCodes.
+ * Gives loading failures one boundary type so Interpreter can handle invalid
+ * programs without depending on file I/O or reflection details.
  */
 public class InvalidProgramException extends RuntimeException {
     public InvalidProgramException(Throwable ex) {

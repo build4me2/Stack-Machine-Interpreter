@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for marking symbolic program locations.
+ * Preserves compiler labels in the program so address resolution has stable branch targets.
  */
 public class LabelCode implements ByteCode {
 

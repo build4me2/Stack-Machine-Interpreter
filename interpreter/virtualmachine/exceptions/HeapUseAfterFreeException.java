@@ -1,7 +1,8 @@
 package interpreter.virtualmachine.exceptions;
 
 /**
- * Exception for when a program accesses heap memory after it has been freed.
+ * Preserves the difference between stale references and never-allocated addresses,
+ * which makes heap lifetime violations visible to the VM.
  */
 public class HeapUseAfterFreeException extends RuntimeException {
     public HeapUseAfterFreeException(Throwable ex) {

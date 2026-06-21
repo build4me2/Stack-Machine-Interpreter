@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for unconditional control-flow jumps.
+ * Stores a resolved branch target so the VM does not resolve labels while running.
  */
 public class GotoCode implements ByteCode, AddressResolvable {
 

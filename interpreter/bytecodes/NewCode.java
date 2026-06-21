@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for allocating heap blocks.
+ * Requests allocation through the VM so heap ownership remains separate from instruction logic.
  */
 public class NewCode implements ByteCode {
 

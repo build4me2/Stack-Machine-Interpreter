@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for stopping program execution.
+ * Requests termination through the VM so program shutdown stays inside the interpreter lifecycle.
  */
 public class HaltCode implements ByteCode {
 

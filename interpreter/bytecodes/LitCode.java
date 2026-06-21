@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for pushing literal values.
+ * Represents constants as instructions so expression evaluation uses the same VM stack path as computed values.
  */
 public class LitCode implements ByteCode {
 

@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for binary operations.
+ * Centralizes binary expression evaluation so operands consistently follow stack order.
  */
 public class BopCode implements ByteCode {
 

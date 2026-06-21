@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for storing values into heap storage.
+ * Sends heap writes through the VM so address and bounds checks stay centralized.
  */
 public class HeapStoreCode implements ByteCode {
 

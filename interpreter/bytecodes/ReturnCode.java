@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for leaving a function body.
+ * Restores caller control through VM-owned frame and return-address operations.
  */
 public class ReturnCode implements ByteCode {
 

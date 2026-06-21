@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * Keeps values and frame boundaries together so function calls can reuse one
+ * stack while still protecting each activation record.
+ */
 class RunTimeStack {
 
     private final ArrayList<Integer> runTimeStack;
@@ -12,19 +16,10 @@ class RunTimeStack {
     public RunTimeStack() {
         runTimeStack = new ArrayList<>();
         framePointer = new Stack<>();
-        // Main begins at frame zero, so every later frame can be represented as an offset from it.
+        // Main has no caller, so its frame boundary anchors all later relative offsets.
         framePointer.add(0);
     }
 
-    /**
-     * Used for displaying the current state of the runTimeStack.
-     * It will print portions of the stack based on respective
-     * frame markers.
-     * Example [1,2,3] [4,5,6] [7,8]
-     * Frame pointers would be 0,3,6
-     *
-     * @return formatted runtime stack grouped by activation frame
-     */
     public String verboseDisplay() {
         StringBuilder display = new StringBuilder();
 
@@ -58,11 +53,6 @@ class RunTimeStack {
         return display.toString();
     }
 
-    /**
-     * Returns the top of the runtime stack, but does not remove it.
-     *
-     * @return copy of the top of the stack
-     */
     public int peek() {
         if (runTimeStack.isEmpty()) {
             throw new IllegalStateException("Cannot peek an empty runtime stack.");
@@ -71,22 +61,11 @@ class RunTimeStack {
         return runTimeStack.get(runTimeStack.size() - 1);
     }
 
-    /**
-     * Pushes a value to the top of the runtime stack.
-     *
-     * @param i value to be pushed
-     * @return value pushed
-     */
     public int push(int i) {
         runTimeStack.add(i);
         return i;
     }
 
-    /**
-     * Removes the top value of the runtime stack.
-     *
-     * @return the value popped
-     */
     public int pop() {
         if (runTimeStack.size() <= framePointer.peek()) {
             throw new IllegalStateException("Cannot pop past the current frame boundary.");
@@ -95,13 +74,6 @@ class RunTimeStack {
         return runTimeStack.remove(runTimeStack.size() - 1);
     }
 
-    /**
-     * Takes the top item of the run time stack, and stores
-     * it into an offset starting from the current frame.
-     *
-     * @param offsetInFrame number of slots above current frame marker
-     * @return the item just stored
-     */
     public int store(int offsetInFrame) {
         int offset = frameOffsetToStackIndex(offsetInFrame);
         int sizeAfterPop = runTimeStack.size() - 1;
@@ -115,14 +87,6 @@ class RunTimeStack {
         return value;
     }
 
-    /**
-     * Takes a value from the run time stack that is at offset
-     * from the current frame marker and pushes it onto the top of
-     * the stack.
-     *
-     * @param offsetInFrame number of slots above current frame marker
-     * @return item just loaded into the offset
-     */
     public int load(int offsetInFrame) {
         int offset = frameOffsetToStackIndex(offsetInFrame);
 
@@ -133,12 +97,6 @@ class RunTimeStack {
         return push(runTimeStack.get(offset));
     }
 
-    /**
-     * Creates a new frame pointer at the index offset slots down
-     * from the top of the runtime stack.
-     *
-     * @param offsetFromTopOfRunStack slots down from the top of the runtime stack
-     */
     public void newFrameAt(int offsetFromTopOfRunStack) {
         if (offsetFromTopOfRunStack < 0 || offsetFromTopOfRunStack > runTimeStack.size()) {
             throw new IllegalArgumentException("Frame offset must describe values already on the runtime stack.");
@@ -147,10 +105,6 @@ class RunTimeStack {
         framePointer.push(runTimeStack.size() - offsetFromTopOfRunStack);
     }
 
-    /**
-     * Pops the current frame off the runtime stack. Also removes
-     * the frame pointer value from the FramePointer Stack.
-     */
     public void popFrame() {
         if (framePointer.size() <= 1) {
             throw new IllegalStateException("Cannot remove the initial runtime frame.");
@@ -159,7 +113,7 @@ class RunTimeStack {
         int returnValue = peek();
         int frameStart = framePointer.pop();
 
-        // A returning function leaves only its result for the caller, not its local frame storage.
+        // Only the return value crosses back to the caller; local frame storage must disappear.
         while (runTimeStack.size() > frameStart) {
             runTimeStack.remove(runTimeStack.size() - 1);
         }

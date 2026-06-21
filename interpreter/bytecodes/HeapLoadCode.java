@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for loading values from heap storage.
+ * Moves heap values through the VM stack path so heap validation remains centralized.
  */
 public class HeapLoadCode implements ByteCode {
 

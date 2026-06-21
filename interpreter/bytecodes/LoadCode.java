@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for copying a current-frame value to the stack top.
+ * Delegates frame reads to the VM so ByteCodes cannot bypass runtime-stack encapsulation.
  */
 public class LoadCode implements ByteCode {
 

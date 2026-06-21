@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Bytecode for reading integer input.
+ * Validates input before it enters the VM stack so later bytecodes can assume integer operands.
  */
 public class ReadCode implements ByteCode {
 

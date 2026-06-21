@@ -1,7 +1,8 @@
 package interpreter.virtualmachine.exceptions;
 
 /**
- * Exception for when a heap address is invalid.
+ * Distinguishes unknown heap references from live-block bounds errors and freed
+ * references during VM heap operations.
  */
 public class InvalidHeapAddressException extends RuntimeException {
     public InvalidHeapAddressException(Throwable ex) {
