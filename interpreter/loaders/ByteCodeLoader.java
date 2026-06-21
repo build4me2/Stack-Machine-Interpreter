@@ -9,27 +9,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Converts source-file lines into initialized ByteCode objects so parsing is
+ * completed before the VM begins execution.
+ */
 public final class ByteCodeLoader {
     private static final String BYTECODE_PACKAGE = "interpreter.bytecodes.";
 
-    private String codSourceFileName;
+    private final String codSourceFileName;
 
-    /**
-     * Constructs ByteCodeLoader object given a COD source code
-     * file name
-     *
-     * @param fileName name of .cod File to load.
-     */
     public ByteCodeLoader(String fileName) {
         this.codSourceFileName = fileName;
     }
 
-    /**
-     * Loads a program from a .cod file.
-     *
-     * @return a constructed Program Object.
-     * @throws InvalidProgramException thrown when loadCodes fails.
-     */
     public Program loadCodes() throws InvalidProgramException {
         Program program = new Program();
 
@@ -61,7 +53,6 @@ public final class ByteCodeLoader {
         Class<?> byteCodeClass = Class.forName(BYTECODE_PACKAGE + className);
         ByteCode byteCode = (ByteCode) byteCodeClass.getDeclaredConstructor().newInstance();
 
-        // The loader stays generic by letting each concrete bytecode interpret its own arguments.
         List<String> args = new ArrayList<>(Arrays.asList(tokens).subList(1, tokens.length));
         byteCode.init(args);
         return byteCode;

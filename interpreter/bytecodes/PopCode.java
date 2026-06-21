@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for removing values from the current runtime frame.
+ * Uses VM stack operations so frame-boundary rules remain enforced by the runtime stack.
  */
 public class PopCode implements ByteCode {
 

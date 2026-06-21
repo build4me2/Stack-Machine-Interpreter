@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for entering a function body.
+ * Couples the resolved function target with a saved return point so nested calls unwind predictably.
  */
 public class CallCode implements ByteCode, AddressResolvable {
 

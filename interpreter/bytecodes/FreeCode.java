@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for releasing heap blocks.
+ * Releases memory through the VM so double-free and use-after-free policy stays in the heap component.
  */
 public class FreeCode implements ByteCode {
 

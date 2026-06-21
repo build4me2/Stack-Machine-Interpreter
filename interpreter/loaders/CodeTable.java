@@ -4,21 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Code table of byte codes in language X.
- *
- * Maps a bytecode token to the class name that implements it.
+ * Keeps source tokens decoupled from class names so the loader can construct
+ * instructions without hard-coding every concrete bytecode decision.
  */
 public final class CodeTable {
 
     private static final Map<String, String> byteCodeTable = new HashMap<>();
 
     private CodeTable() {
-        // do nothing
     }
 
-    /**
-     * Fills code table with class name mappings.
-     */
     public static void init() {
         byteCodeTable.clear();
 
@@ -43,12 +38,6 @@ public final class CodeTable {
         byteCodeTable.put("FREE", "FreeCode");
     }
 
-    /**
-     * Returns the ByteCode class name for a given token.
-     *
-     * @param token bytecode to map. For example, HALT --> HaltCode
-     * @return class name of bytecode
-     */
     public static String getClassName(String token) {
         return byteCodeTable.get(token.trim());
     }

@@ -5,7 +5,7 @@ import interpreter.virtualmachine.VirtualMachine;
 import java.util.List;
 
 /**
- * Bytecode for writing the top runtime value.
+ * Keeps program output limited to stack values so tracing and program output remain separable.
  */
 public class WriteCode implements ByteCode {
 
