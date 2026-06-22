@@ -37,7 +37,7 @@ public class CallCode implements ByteCode, AddressResolvable {
 
     @Override
     public String toString() {
-        return "CALL " + label + " " + baseLabel() + "(" + arguments + ")";
+        return "CALL " + label + "\n" + baseLabel() + "(" + arguments + ")";
     }
 
     private String baseLabel() {
