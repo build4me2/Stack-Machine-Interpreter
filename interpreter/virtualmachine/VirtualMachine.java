@@ -1,6 +1,7 @@
 package interpreter.virtualmachine;
 
 import interpreter.bytecodes.ByteCode;
+import interpreter.bytecodes.HaltCode;
 import interpreter.loaders.Program;
 import interpreter.virtualmachine.exceptions.HeapBoundsException;
 import interpreter.virtualmachine.exceptions.HeapOutOfMemoryException;
@@ -125,7 +126,7 @@ public class VirtualMachine {
     }
 
     private boolean shouldDisplayVerbose(ByteCode code, boolean verboseBeforeExecution) {
-        if (code.getClass().getSimpleName().equals("HaltCode")) {
+        if (code instanceof HaltCode) {
             return false;
         }
 
