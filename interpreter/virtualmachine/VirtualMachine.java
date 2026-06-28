@@ -2,6 +2,7 @@ package interpreter.virtualmachine;
 
 import interpreter.bytecodes.ByteCode;
 import interpreter.bytecodes.HaltCode;
+import interpreter.bytecodes.VerboseCode;
 import interpreter.loaders.Program;
 import interpreter.virtualmachine.exceptions.HeapBoundsException;
 import interpreter.virtualmachine.exceptions.HeapOutOfMemoryException;
@@ -44,7 +45,11 @@ public class VirtualMachine {
 
             if (shouldDisplayVerbose(code, verboseBeforeExecution)) {
                 System.out.println(code);
-                System.out.println(runTimeStack.verboseDisplay());
+                // A VERBOSE toggle reports only itself; its line marks where tracing
+                // starts or stops, so no frame snapshot belongs with it.
+                if (!(code instanceof VerboseCode)) {
+                    System.out.println(runTimeStack.verboseDisplay());
+                }
             }
 
             programCounter++;

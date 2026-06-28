@@ -31,7 +31,7 @@ public class ReturnCode implements ByteCode {
         if (label == null) {
             return "RETURN";
         }
-        return "RETURN " + label + "\nEXIT " + baseLabel() + ":" + returnValue;
+        return "RETURN " + label + "\tEXIT " + baseLabel() + ":" + returnValue;
     }
 
     private String baseLabel() {

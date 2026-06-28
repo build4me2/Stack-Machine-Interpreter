@@ -30,6 +30,6 @@ public class LoadCode implements ByteCode {
         if (id == null) {
             return "LOAD " + offset;
         }
-        return "LOAD " + offset + " " + id + " <load " + id + ">";
+        return "LOAD " + offset + " " + id + "\t<load " + id + ">";
     }
 }

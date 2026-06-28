@@ -31,6 +31,6 @@ public class StoreCode implements ByteCode {
         if (id == null) {
             return "STORE " + offset;
         }
-        return "STORE " + offset + " " + id + "\n" + id + "=" + storedValue;
+        return "STORE " + offset + " " + id + "\t" + id + " = " + storedValue;
     }
 }
