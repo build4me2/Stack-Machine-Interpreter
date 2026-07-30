@@ -8,7 +8,7 @@ A Java virtual machine that loads and executes textual bytecode for the educatio
 - Resolves symbolic labels for calls, branches, and jumps before execution
 - Maintains isolated stack frames for arguments, local values, and return values
 - Supports recursion, arithmetic, comparisons, branching, and console I/O
-- Provides a bounded 2 MiB heap with allocation and deallocation
+- Limits live heap payloads to 2 MiB (524,288 integer slots), with capacity restored when blocks are freed
 - Detects invalid heap addresses, out-of-bounds access, use-after-free, and out-of-memory conditions
 - Produces instruction and runtime-stack traces with `VERBOSE ON`
 
@@ -102,15 +102,18 @@ interpreter/
 | `heapPrintArray.x.cod` | Heap-backed arrays and console I/O |
 | `functionArgsTest.cod` | Function calls with different argument counts |
 
-To enable tracing in a bytecode program, add `VERBOSE ON`; use `VERBOSE OFF` to stop it. While tracing is active, the interpreter prints each executed instruction followed by the runtime stack grouped into frames.
+To enable tracing in a bytecode program, add `VERBOSE ON`; use `VERBOSE OFF` to stop it. While tracing is active, ordinary instructions are followed by the runtime stack grouped into frames. `HALT` is not printed, and `VERBOSE ON`/`VERBOSE OFF` lines are printed without a stack snapshot.
 
 ## Design notes
 
-- Opcodes are decoupled from implementations through `CodeTable`, making the instruction set straightforward to extend.
+- Opcodes are decoupled from implementations through `CodeTable`. To add one, implement the `ByteCode` interface and register its opcode/class mapping in `CodeTable.init()`.
 - Control-flow instructions implement address resolution so labels are translated once before execution.
 - Stack positions are frame-relative, preventing functions from directly addressing another frame's values.
 - Heap address `0` is intentionally invalid, and freed addresses remain recorded to distinguish stale references from addresses that were never allocated.
 - The project has no external runtime dependencies.
+- The included `.x` files are source examples only. This repository does not include an X-language compiler; the interpreter executes textual `.cod` files.
+- Build and test automation are not included. Compilation uses the documented `javac` command, and the example programs provide manual smoke tests.
+- The generated `build/` directory is not excluded by a root `.gitignore`; remove it before committing if you build locally.
 
 ## License
 
